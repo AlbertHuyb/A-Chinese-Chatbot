@@ -60,7 +60,7 @@ for c in content:
 		vector = vector/temp_length
 		#vector_list = [vocabulary[x] for x in word_list]
 
-		vector = self_attention(vector = vector[0],word_list = word_vectors,times = 1)
+		#vector = self_attention(vector = vector[0],word_list = word_vectors,times = 1)
 	
 		#print(num)
 		#print(c)

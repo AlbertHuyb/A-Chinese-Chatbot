@@ -53,7 +53,7 @@ while(1):
 
 	if length != 0:
 		aim_vector = aim_vector/length
-		#aim_vector = self_attention(vector = aim_vector,word_list = words_vectors,times = 3)
+		aim_vector = self_attention(vector = aim_vector,word_list = words_vectors,times = 2)
 	else:
 		print("请换个说法")
 		continue
