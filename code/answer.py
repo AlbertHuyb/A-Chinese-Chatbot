@@ -3,6 +3,7 @@ import numpy as np
 
 import warnings
 warnings.filterwarnings(action='ignore', category=UserWarning, module='gensim')
+warnings.filterwarnings(action='ignore', category=UserWarning, module='jieba')
 
 import gensim
 
@@ -22,10 +23,10 @@ def self_attention(vector,word_list = None,times = 2):
 
 	return vector
 
-keywords = open('../data/keywords.txt').readlines()
+keywords = open('../data/keywords.txt',encoding = 'gbk').readlines()
 keywords = [x.strip('\n') for x in keywords]
 keyvector = np.load('../model/keyvectors.npy')
-content = open('../data/test1.txt').readlines()
+content = open('../data/test1.txt',encoding = 'gbk').readlines()
 content_vector = np.load('../model/content_vectors.npy')
 #model = gensim.models.KeyedVectors.load_word2vec_format('news12g_bdbk20g_nov90g_dim128.bin', binary=True)
 #vocabulary = model.wv
@@ -53,7 +54,7 @@ while(1):
 
 	if length != 0:
 		aim_vector = aim_vector/length
-		aim_vector = self_attention(vector = aim_vector,word_list = words_vectors,times = 2)
+		#aim_vector = self_attention(vector = aim_vector,word_list = words_vectors,times = 2)
 	else:
 		print("请换个说法")
 		continue
